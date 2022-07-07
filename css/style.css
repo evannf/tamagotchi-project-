@@ -1,3 +1,4 @@
-/* body {
-    background: url(projects/tamagotchi-project-/images/tamagotchi-background.png);
-} */
+body {
+    background-image: url("../images/tamagotchi-background.png")
+}
+
