@@ -1,4 +1,19 @@
 body {
-    background-image: url("../images/tamagotchi-background.png")
+    background-image: url("../images/tamagotchi-background.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightMode {
+    background-image: url("../images/tamagotchi-background.png");
+}
+
+.darkMode {
+    background-image: url("../images/tg-backgorund-night.png")
+}
+img {
+    width: 100px;
+    height: auto;   
 }
 

@@ -1,6 +1,6 @@
 class Tamagotchi {
     constructor(name){
-        name = this.name
+        name = prompt ("What is your pet's name?")
         this.hunger = 1
         this.sleepiness = 1
         this.boredom = 1
@@ -40,9 +40,8 @@ class Tamagotchi {
 const eddie = new Tamagotchi ('Eddie')
 console.log(eddie)
 
-
-
 class Game {
+   
     feed(){
         this.hunger = this.hunger - 1
     }
@@ -56,4 +55,8 @@ class Game {
     
 }
 
-button.addEventListener("click", handleClickEvent);
+
+//framework for lights on/off TOGGLE function
+// let bodyTag = document.querySelector('body')
+
+// bodyTag.setAttribute('class','darkMode')
