@@ -56,6 +56,33 @@ class Game {
 }
 
 
+
+
+
+
+
+
+function bedTime() {
+    document.body.classList.toggle("darkMode")
+}
+
+const lightSwitch = document.querySelector(".lightSwitch");
+
+lightSwitch.addEventListener('click', function() {
+})
+
+
+
+const feedButton = document.querySelector(".feed");
+
+feedButton.addEventListener("click", Game.feed())
+
+// const playButton = document.querySelector(".play");
+
+// playButton.addEventListener("click", play(){
+//     Game.play();
+// })
+
 //framework for lights on/off TOGGLE function
 // let bodyTag = document.querySelector('body')
 

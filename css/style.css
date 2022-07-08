@@ -1,5 +1,5 @@
-body {
-    background-image: url("../images/tamagotchi-background.png");
+body, html {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,13 +7,19 @@ body {
 
 .lightMode {
     background-image: url("../images/tamagotchi-background.png");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .darkMode {
-    background-image: url("../images/tg-backgorund-night.png")
+    background-image: url("../images/tg-backgorund-night.png");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 img {
     width: 100px;
     height: auto;   
 }
+
+
 
