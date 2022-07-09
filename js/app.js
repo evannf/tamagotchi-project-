@@ -33,41 +33,36 @@ class Tamagotchi {
             alert (`${this.name} has starved and passed away. That bites.`)
         }
     }
-}
-
-
-const eddie = new Tamagotchi ()
-console.log(eddie)
-
-   
-    const feedButton = document.querySelector('.feed');
-    feedButton.addEventListener('click', feedPet());
-    function feedPet() {
-        Tamagotchi.hunger = Tamagotchi.hunger - 1
-    };
-
-    const play = () => {
-        Tamagotchi.boredom = Tamagotchi.boredom - 1
-    };
-
-    const sleep = () => {
-        Tamagotchi.sleepiness = Tamagotchi.sleepiness - 1
-    };
     
+    feedPet = () => {
+        this.hunger = this.hunger - 1
+    };
+    playTime = () => {
+        this.boredom = this.boredom -1
+    }
 
-
-
-
-
-
-
-
-
-function bedTime() {
-    document.body.classList.toggle("darkMode")
+    bedTime() {
+        document.body.classList.toggle("darkMode");
+        this.sleepiness--
+    }
+    
+    
 }
 
-const lightSwitch = document.querySelector(".lightSwitch");
+
+const pet = new Tamagotchi ()
+console.log(pet)
+
+
+
+const playButton = document.querySelector('.play');
+playButton.addEventListener('click',() => {pet.playTime()})
+   
+const feedButton = document.querySelector('.feed');
+feedButton.addEventListener('click', () => {pet.feedPet()});
+
+const lightSwitch = document.querySelector(".lights");
+lightSwitch.addEventListener('click', () => {pet.bedTime()})
 
 
 
