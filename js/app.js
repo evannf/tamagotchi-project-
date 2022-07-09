@@ -12,9 +12,12 @@ class Tamagotchi {
     
     getOld(){
         this.age++
-        if (this.age >= 10) {
-        document.querySelector('img').src="./images/bunny3final.png"};
-        document.querySelector(".age").innerText = `Age: ${this.age}`;
+        if (this.age == 5) {
+        document.querySelector('img').src="./images/bunny2final.png"
+        } else if (this.age == 10) {
+            document.querySelector('img').src="./images/bunny3final.png"
+        }
+            document.querySelector(".age").innerText = `Age: ${this.age}`;
         }
 
     getSleepy(){
