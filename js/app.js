@@ -1,10 +1,13 @@
+alert ("Welcome to Bunnigachi! Use the buttons to keep all levels below 10, or your bunny will perish!")
+
 class Tamagotchi {
     constructor(){
-        this.name = prompt ("What is your pet's name?")
+        this.name = prompt ("What is your rabbit's name?")
         this.hunger = 1
         this.sleepiness = 1
         this.boredom = 1
         this.age = 0
+        document.querySelector("h1").innerText = `This is your rabbit, ${this.name}!`
     }
     
     getOld(){
@@ -21,21 +24,27 @@ class Tamagotchi {
             this.sleepiness++
             document.querySelector(".sleep").innerText = `Sleepiness: ${this.sleepiness}`
         } else {
-            alert (`${this.name} stayed up too long and fell asleep for good. Goodnight, sweet prince.`)}
+            alert (`${this.name} stayed up too long and fell asleep for good. Goodnight, sweet prince.`)
+            location.reload()
+        }
+            
         }
     
     getBored(){
         if (this.boredom < 10){
             this.boredom++
+            document.querySelector(".boredom").innerText = `Boredom: ${this.boredom}`
         } else {
-            alert (`${this.name} has died of sheer boredom. Don't take it personally.`) 
+            alert (`${this.name} has died of sheer boredom. Don't take it personally.`)
+            location.reload() 
         }
     }
     getHungry() {
         if (this.hunger < 10){
             this.hunger++
+            document.querySelector(".hunger").innerText = `Hunger: ${this.hunger}`
         } else {
-            alert (`${this.name} has starved and passed away. That bites.`);
+            alert (`${this.name} has starved and passed away. That bites.`)
             location.reload()
         }
     }
@@ -47,7 +56,8 @@ class Tamagotchi {
         this.boredom = this.boredom -1
     }
 
-    bedTime() {
+
+    lightSwitch () {
         document.body.classList.toggle("darkMode");
         this.sleepiness--
     }
@@ -56,11 +66,11 @@ class Tamagotchi {
 const pet = new Tamagotchi ()
 console.log(pet)
 
-setInterval(() => {pet.getOld()}, 6000)
+setInterval(() => {pet.getOld()}, 4000)
 setInterval(() => {pet.getBored()}, 2000)
 setInterval(() => {pet.getHungry()}, 3000)
-setInterval(() => {pet.getSleepy()}, 4000)
-
+setInterval(() => {pet.getSleepy()}, 6000)
+setInterval(() => {pet.bedTime()}, 2000)
 
 const playButton = document.querySelector('.play');
 playButton.addEventListener('click',() => {pet.playTime()})
@@ -69,27 +79,4 @@ const feedButton = document.querySelector('.feed');
 feedButton.addEventListener('click', () => {pet.feedPet()});
 
 const lightSwitch = document.querySelector(".lights");
-lightSwitch.addEventListener('click', () => {pet.bedTime()})
-
-
-
-
-
-
-
-//BROKEN CODE//
-
-// const feedButton = document.querySelector(".feed");
-
-// feedButton.addEventListener("click", feed())
-
-// const playButton = document.querySelector(".play");
-
-// playButton.addEventListener("click", play(){
-//     Game.play();
-// })
-
-//framework for lights on/off TOGGLE function
-// let bodyTag = document.querySelector('body')
-
-// bodyTag.setAttribute('class','darkMode')
+lightSwitch.addEventListener('click', () => {pet.lightSwitch()})
