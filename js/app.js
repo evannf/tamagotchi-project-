@@ -1,18 +1,16 @@
 class Tamagotchi {
-    constructor(name){
-        name = prompt ("What is your pet's name?")
+    constructor(){
+        this.name = prompt ("What is your pet's name?")
         this.hunger = 1
         this.sleepiness = 1
         this.boredom = 1
         this.age = 0
     }
     getOld(){
-        if (this.age >= 5){
-            //morph to bunny2 here
-        } else if (this.age >= 10){
-            //morph to bunny3 here
-        }
-        
+        this.age = this.age + 1
+        if (this.age >= 10){
+            document.querySelector('img').src="bunny3.png"
+         }
     }
     getSleepy(){
         if (this.sleepiness < 10){
@@ -28,7 +26,7 @@ class Tamagotchi {
             alert (`${this.name} has died of sheer boredom. Don't take it personally.`) 
         }
     }
-    getHungry(){
+    getHungry() {
         if (this.hunger < 10){
             this.hunger + 1
         } else {
@@ -37,23 +35,26 @@ class Tamagotchi {
     }
 }
 
-const eddie = new Tamagotchi ('Eddie')
+
+const eddie = new Tamagotchi ()
 console.log(eddie)
 
-class Game {
    
-    feed(){
-        this.hunger = this.hunger - 1
-    }
+    const feedButton = document.querySelector('.feed');
+    feedButton.addEventListener('click', feedPet());
+    function feedPet() {
+        Tamagotchi.hunger = Tamagotchi.hunger - 1
+    };
 
-    play(){
-        this.boredom = this.boredom - 1
-    }
-    bedtime(){
-        this.sleepiness = this.sleepiness - 1
-    }
+    const play = () => {
+        Tamagotchi.boredom = Tamagotchi.boredom - 1
+    };
+
+    const sleep = () => {
+        Tamagotchi.sleepiness = Tamagotchi.sleepiness - 1
+    };
     
-}
+
 
 
 
@@ -68,14 +69,17 @@ function bedTime() {
 
 const lightSwitch = document.querySelector(".lightSwitch");
 
-lightSwitch.addEventListener('click', function() {
-})
 
 
 
-const feedButton = document.querySelector(".feed");
 
-feedButton.addEventListener("click", Game.feed())
+
+
+//BROKEN CODE//
+
+// const feedButton = document.querySelector(".feed");
+
+// feedButton.addEventListener("click", feed())
 
 // const playButton = document.querySelector(".play");
 

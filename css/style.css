@@ -18,8 +18,21 @@ body, html {
 }
 img {
     width: 100px;
-    height: auto;   
+    height: 120px;   
+    animation-duration: 5s;
+    animation-name: slidein;
 }
 
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
 
 
