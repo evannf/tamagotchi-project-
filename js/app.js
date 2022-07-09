@@ -6,31 +6,37 @@ class Tamagotchi {
         this.boredom = 1
         this.age = 0
     }
+    
     getOld(){
-        this.age = this.age + 1
+        this.age++
+        document.querySelector(".age").innerText = `Age: ${this.age}`;
         if (this.age >= 10){
-            document.querySelector('img').src="bunny3.png"
+            document.querySelector('img').src="./images/bunny3final.png"
          }
+        
     }
+
     getSleepy(){
         if (this.sleepiness < 10){
-            this.sleepiness + 1
+            this.sleepiness++
+            document.querySelector(".sleep").innerText = `Sleepiness: ${this.sleepiness}`
         } else {
             alert (`${this.name} stayed up too long and fell asleep for good. Goodnight, sweet prince.`)}
         }
     
     getBored(){
         if (this.boredom < 10){
-            this.boredom + 1
+            this.boredom++
         } else {
             alert (`${this.name} has died of sheer boredom. Don't take it personally.`) 
         }
     }
     getHungry() {
         if (this.hunger < 10){
-            this.hunger + 1
+            this.hunger++
         } else {
-            alert (`${this.name} has starved and passed away. That bites.`)
+            alert (`${this.name} has starved and passed away. That bites.`);
+            location.reload()
         }
     }
     
@@ -46,13 +52,14 @@ class Tamagotchi {
         this.sleepiness--
     }
     
-    
 }
-
-
 const pet = new Tamagotchi ()
 console.log(pet)
 
+setInterval(() => {pet.getOld()}, 6000)
+setInterval(() => {pet.getBored()}, 2000)
+setInterval(() => {pet.getHungry()}, 3000)
+setInterval(() => {pet.getSleepy()}, 4000)
 
 
 const playButton = document.querySelector('.play');
